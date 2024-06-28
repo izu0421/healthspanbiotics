@@ -96,7 +96,35 @@ section {
         display: block;
         margin-bottom: 10px;
     }
+
+    .background-picture-research {
+        left: 20px; /* Adjust for mobile view */
+        top: 20px; /* Adjust for mobile view */
+        max-width: calc(100% - 40px); /* Full width for mobile */
+    }
 }
+
+@media (max-width: 480px) {
+    .header-logo {
+        max-width: 100px;
+    }
+
+    .btn {
+        padding: 8px 15px;
+    }
+
+    .research-youtube-description h2,
+    .research-youtube-description p {
+        font-size: 14px;
+    }
+
+    .background-picture-research {
+        left: 10px; /* Further adjust for smaller screens */
+        top: 10px; /* Further adjust for smaller screens */
+        max-width: calc(100% - 20px); /* Full width for smaller screens */
+    }
+}
+
 
 /* Video */
 .video-container {
@@ -276,7 +304,7 @@ footer {
 
 .research-youtube-description, .video-YY-youtube {
     flex: 1; /* Each child will take up equal space */
-    padding: 15px; /* Adds some padding around each section */
+    padding: 120px; /* Adds some padding around each section */
 
     opacity: 0; /* Start with the section hidden */
     animation-name: fadeIn;
@@ -286,15 +314,26 @@ footer {
 
 }
 
+/* Video */
 .video-YY-youtube {
-    max-width: auto; /* Adjust as needed */
-    height: 300px; /* Adjust as needed */
+    position: relative;
+    padding-top: 20%;
+    padding-bottom: 20%; /* Adjusted height for a shorter video */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    margin: 0 auto; /* Center the video */
 }
 
 /* Ensure the iframe takes the full width of its container */
 .video-YY-youtube iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    border: 0;
 }
 
 /* Team page 

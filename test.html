@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - Healthspan Biotics</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #f8f9fa;
+            padding: 10px;
+        }
+
+        .research-banner-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .research-banner-header a {
+            text-decoration: none;
+        }
+
+        .header-logo {
+            max-width: 150px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .research-banner {
+            text-align: center;
+            padding: 20px;
+            background-color: #e9ecef;
+        }
+
+        .background-picture-research h2 {
+            margin: 0;
+        }
+
+        .background-picture-research p {
+            margin: 15px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .main-content {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .research-youtube-description {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .video-YY-youtube {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            margin: 0 auto; /* Center the video */
+        }
+
+        .video-YY-youtube iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f8f9fa;
+        }
+
+        .social-links a {
+            margin: 0 10px;
+            color: #000;
+            text-decoration: none;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .research-banner-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul li {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .research-banner {
+                padding: 10px;
+            }
+
+            .main-content {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-logo {
+                max-width: 100px;
+            }
+
+            .btn {
+                padding: 8px 15px;
+            }
+
+            .research-youtube-description h2,
+            .research-youtube-description p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="research-banner-header">
+            <a href="index.html">
+                <img src="media/logo.png" alt="Healthspan Biotics Logo" class="header-logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="team.html">Team</a></li>
+                </ul>
+            </nav>
+            <nav>
+                <ul>
+                    <li><a href="contact.html">Contact us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="research-banner">
+            <div class="background-picture-research">
+                <h2>Boosting brain health using nature-inspired methods</h2>
+                <p>We use AI and laboratory experiments to identify how certain individuals protect themselves against brain-related 
+                    diseases like Alzheimer's disease. We identified a novel pathway that contributes to the health of our neurons and 
+                    found a beneficial bacteria from our gut can boost this pathway and promote neuronal health.
+                    <br>
+                    <br>
+                    Please click here to register your interest in our product.
+                </p>
+                <a href="https://forms.gle/X4cM1jgseB33KzwC8" class="btn">Register your interest!</a>
+            </div>
+        </div>
+    </header>
+    <div class="main-content">
+        <div class="research-youtube-description">
+            <h2>Using AI and laboratory experiments to understand and find therapies for dementia</h2>
+            <p>
+                Our company integrates information at different levels of biology, at the genetic, cellular, and population-level aspects. 
+                Our novel mechanistic insights into dementia lead us to identify, refine and validate a naturally-occuring
+                probiotic bacteria that might be able to delay or prevent Alzheimer's disease pathology.
+                <br>
+                <br>
+                Please see a short video about our research and register your interest in our product.
+                <br>
+                <a href="https://forms.gle/X4cM1jgseB33KzwC8" class="btn">Register your interest!</a>
+            </p>
+        </div>
+        <div class="video-YY-youtube">
+            <iframe src="https://www.youtube.com/embed/9UEiBhHuP2o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    <footer>
+        <div class="social-links">
+            <a href="https://twitter.com/izu__u" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/yizhou-yu1/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p>&copy; 2023 Healthspan Biotics. All rights reserved.</p>
+    </footer>
+</body>
+</html>
