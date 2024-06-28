@@ -123,6 +123,9 @@ section {
         top: 10px; /* Further adjust for smaller screens */
         max-width: calc(100% - 20px); /* Full width for smaller screens */
     }
+    .video-YY-youtube {
+        padding-bottom: 56.25%; /* Standard 16:9 aspect ratio for smaller screens */
+    }
 }
 
 
@@ -233,7 +236,7 @@ footer {
     background-position: center; /* Centers the background image */
     height: 800px; /* Adjust the height as needed */
     width: 100%; /* Ensures the div spans the full width of the window */
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     /* z-index: -1; */
@@ -288,7 +291,7 @@ footer {
 }
 
 .main-content {
-    padding-top: 800px; /* Adjust as needed */
+    padding-top: 820px; /* Adjust as needed */
     display: flex;
     justify-content: space-between; /* Distributes space between items */
     align-items: flex-start; /* Aligns items to the start of the flex container */
