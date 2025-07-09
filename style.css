@@ -22,7 +22,7 @@ header {
     width: 100%;
     background-color: transparent;
     z-index: 10; /* Ensures the nav is above the video */
-
+    padding: 1rem 0; /* Ensure there's enough padding */
     margin-bottom: 20px; /* Adds space between sections */
 
 }
