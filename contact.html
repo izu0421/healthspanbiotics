@@ -1,72 +1,136 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Contact - Healthspan Biotics</title>
-    <!-- Add head elements -->
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-    <header>
-        <div class="team-header">
-            <a href="index.html">
-                <img src="media/logo.png" alt="Healthspan Biotics Logo" class="header-logo">
-            </a>
+ <head>
+  <title>
+   Contact - Healthspan Biotics
+  </title>
+  <!-- Add head elements -->
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+   <div class="page-wrapper">
 
-            <nav>
-                <ul>
-                    <!-- <li><a href="index.html">Home</a></li> -->
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="team.html">Team</a></li>
-                    <!-- <li><a href="product.html">Product</a></li> -->
-                </ul>
-                <!-- <img src="media/logo.png" alt="Healthspan Biotics Logo" class="header-logo"> -->
-            </nav>
-
-            <nav>
-                <ul>
-                    <li><a href="contact.html">Contact us</a></li>
-                </ul>
-
-            </nav>
-        </div>
-    </header>
-
-    <div class="contact-container">
-        <h1>Contact us</h1>
-
-        <p>
-            Please leave us any comments or suggestions. Thanks for your interest in our work! <br> 
-        </p>
-        <form target="_blank" action="https://formsubmit.co/yizhou0421@gmail.com" method="POST">
-
-          <div class="form-group">
-            <div class="form-row">
-              <div class="col">
-                <input type="text" name="name" class="form-control" placeholder="Full Name" required>
-              </div>
-              <div class="col">
-                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
-              </div>
-            </div>
-
-          </div>
-          <div class="form-group">
-            <textarea placeholder="Your Message" class="form-control" name="message" rows="10" required></textarea>
-          </div>
-          <contact-button type="submit" class="btn btn-lg btn-dark btn-block">Send</contact-button>
-        </form>
+     <a class="logo-click-area" href="index.html">
+      <div class="floating-logo">
+       <video autoplay="" id="header-logo-video" muted="" playsinline="">
+        <source src="media/logo_video_fast.mp4" type="video/mp4"/>
+       </video>
       </div>
-
-
-    <footer>
-        <!-- Footer content -->
-        <div class="social-links">
-            <a href="https://twitter.com/izu__u" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/yizhou-yu1/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+     </a>
+     <header>
+      <!-- <h1>Healthspan Biotics</h1> -->
+      <!--   <a href="index.html" class="header-logo-wrapper">
+             <video id="header-logo-video" autoplay muted playsinline>
+               <source src="media/logo_video.mp4" type="video/mp4">
+             </video>
+             <img id="header-logo-final" src="media/logo_final_frame.png" alt="Healthspan Biotics Logo">
+           </a> -->
+       <nav class="main-nav">
+         <ul>
+           <li><a href="research.html">RESEARCH</a></li>
+           <li><a href="team.html">TEAM</a></li>
+           <li><a href="contact.html">CONTACT US</a></li>
+         </ul>
+       </nav>
+     </header>
+     <div class="logo-mask-blur">
+     </div>
+     <img src="media/logo_final_frame.png" alt="Logo" class="logo-overlay default-logo">
+     <img src="media/logo_white_inverted_center.png" alt="Logo White" class="logo-overlay white-logo" style="display: none;">
+     <div class="contact-container">
+      <h1>
+       Contact us
+      </h1>
+      <p>
+       Please leave us any comments or suggestions. Thanks for your interest in our work!
+       <br/>
+      </p>
+      <form action="https://formsubmit.co/yizhou0421@gmail.com" method="POST" target="_blank">
+       <div class="form-group">
+        <div class="form-row">
+         <div class="col">
+          <input class="form-control" name="name" placeholder="Full Name" required="" type="text"/>
+         </div>
+         <div class="col">
+          <input class="form-control" name="email" placeholder="Email Address" required="" type="email"/>
+         </div>
         </div>
-        <p>&copy; 2023 Healthspan Biotics. All rights reserved.</p>
-    </footer>
-</body>
+       </div>
+       <div class="form-group">
+        <textarea class="form-control" name="message" placeholder="Your Message" required="" rows="10"></textarea>
+       </div>
+       <contact-button class="btn btn-lg btn-dark btn-block" type="submit">
+        Send
+       </contact-button>
+      </form>
+     </div>
+   </div>
+  <footer>
+   <!-- Footer content -->
+   <div class="social-links">
+    <a href="https://twitter.com/izu__u" target="_blank">
+     <i class="fab fa-twitter">
+     </i>
+    </a>
+    <a href="https://www.linkedin.com/in/yizhou-yu1/" target="_blank">
+     <i class="fab fa-linkedin-in">
+     </i>
+    </a>
+   </div>
+   <p>
+    © 2023 Healthspan Biotics. All rights reserved.
+   </p>
+  </footer>
+     <script>
+      const headerVideo = document.getElementById("header-logo-video");
+
+      headerVideo.addEventListener("ended", () => {
+        headerVideo.style.display = "none";
+      });
+    </script>
+
+    </script>
+    <script>
+      const header = document.querySelector("header");
+
+      function updateHeaderOnScroll() {
+        if (window.scrollY > 100) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      }
+
+      window.addEventListener("scroll", updateHeaderOnScroll);
+      window.addEventListener("load", updateHeaderOnScroll);
+    </script>
+    <script>
+      const blackSection = document.getElementById("black-hero-section");
+      const navLinks = document.querySelectorAll("header nav ul li a");
+      const defaultLogo = document.querySelector(".default-logo");
+      const whiteLogo = document.querySelector(".white-logo");
+
+      function updateVisualsOnScroll() {
+        const sectionTop = blackSection.offsetTop + blackSection.offsetHeight * 0.36;
+        const sectionBottom = blackSection.offsetTop + blackSection.offsetHeight * 1.36;
+        const scrollY = window.scrollY + window.innerHeight / 2;
+
+        if (scrollY > sectionTop && scrollY < sectionBottom) {
+          // Inside black section
+          navLinks.forEach(link => link.classList.add("white-nav"));
+          defaultLogo.style.display = "none";
+          whiteLogo.style.display = "block";
+        } else {
+          // Outside black section
+          navLinks.forEach(link => link.classList.remove("white-nav"));
+          defaultLogo.style.display = "block";
+          whiteLogo.style.display = "none";
+        }
+      }
+
+      window.addEventListener("scroll", updateVisualsOnScroll);
+      window.addEventListener("load", updateVisualsOnScroll);
+    </script>
+
+ </body>
 </html>
-
-

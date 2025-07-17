@@ -1,74 +1,148 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Healthspan Biotics</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
-    <!-- Add any additional head elements here -->
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-</head>
-
-
-<body>
-    
+ <head>
+  <title>
+   Healthspan Biotics
+  </title>
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+  <!-- Add any additional head elements here -->
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="page-wrapper">
+    <a class="logo-click-area" href="index.html">
+     <div class="floating-logo">
+      <video autoplay="" id="header-logo-video" muted="" playsinline="">
+       <source src="media/logo_video_fast.mp4" type="video/mp4"/>
+      </video>
+     </div>
+    </a>
     <header>
-        <!-- <h1>Healthspan Biotics</h1> -->
-
-        <a href="index.html">
-            <img src="media/logo.png" alt="Healthspan Biotics Logo" class="header-logo">
+     <!-- <h1>Healthspan Biotics</h1> -->
+     <!--   <a href="index.html" class="header-logo-wrapper">
+            <video id="header-logo-video" autoplay muted playsinline>
+              <source src="media/logo_video.mp4" type="video/mp4">
+            </video>
+            <img id="header-logo-final" src="media/logo_final_frame.png" alt="Healthspan Biotics Logo">
+          </a> -->
+     <div class="logo-mask-blur">
+     </div>
+     <img alt="Logo" class="logo-overlay default-logo" src="media/logo_final_frame.png"/>
+     <img alt="Logo White" class="logo-overlay white-logo" src="media/logo_white_inverted_center.png" style="display: none;"/>
+     <nav class="main-nav">
+      <ul>
+       <li>
+        <a href="research.html">
+         RESEARCH
         </a>
-
-        <nav>
-            <ul>
-                <!-- <li><a href="index.html">Home</a></li> -->
-                <li><a href="research.html">Research</a></li>
-                <li><a href="team.html">Team</a></li>
-                <!-- <li><a href="product.html">Product</a></li> -->
-            </ul>
-            <!-- <img src="media/logo.png" alt="Healthspan Biotics Logo" class="header-logo"> -->
-        </nav>
-
-        <nav>
-            <ul>
-                <li><a href="contact.html">Contact us</a></li>
-            </ul>
-
-        </nav>
+       </li>
+       <li>
+        <a href="team.html">
+         TEAM
+        </a>
+       </li>
+       <li>
+        <a href="contact.html">
+         CONTACT US
+        </a>
+       </li>
+      </ul>
+     </nav>
     </header>
-
-    <!-- Video Embedding -->
-    <div class="video-container">
-        <video width="100%" height="auto" autoplay loop muted>
-            <source src="media/video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-
-        <div class="video-overlay">
-            <h2>Healthspan Biotics</h2>
-
-            <p>Promoting healthy brain aging through probiotics</p>
-
-
-            <a href="research.html" class="btn">Research</a>
-        </div>
+    <div class="header-spacer">
     </div>
+    <section id="hero">
+     <div class="hero-text">
+      <h1>
+       IMAGINE
+      </h1>
+      <p>
+       Reimagining the microbiome to extend human healthspan through targeted, next-generation therapeutics.
+      </p>
+     </div>
+     <div class="hero-image">
+      <img alt="Biotech illustration" src="media/mito_ai.png"/>
+     </div>
+    </section>
+    <!--     <div class="video-overlay">
+              <h2>Healthspan Biotics</h2>
 
+              <p>Promoting healthy brain aging through probiotics</p>
+
+
+              <a href="research.html" class="btn">Research</a>
+          </div> -->
     <!-- Removed text section -->
     <!-- <section>
-        <h2>Fighting Dementia with Probiotics</h2>
-        <p>Our mission is to promote healthy brain aging and prevent dementia through probiotics.</p>
-    </section> -->
+          <h2>Fighting Dementia with Probiotics</h2>
+          <p>Our mission is to promote healthy brain aging and prevent dementia through probiotics.</p>
+      </section> -->
+   </div>
+  <footer>
+   <div class="social-links">
+    <a href="https://twitter.com/izu__u" target="_blank">
+     <i class="fab fa-twitter">
+     </i>
+    </a>
+    <a href="https://www.linkedin.com/in/yizhou-yu1/" target="_blank">
+     <i class="fab fa-linkedin-in">
+     </i>
+    </a>
+   </div>
+   <p>
+    © 2023 Healthspan Biotics. All rights reserved.
+   </p>
+  </footer>
+  <script>
+   const headerVideo = document.getElementById("header-logo-video");
 
-    <footer>
-        <div class="social-links">
-            <a href="https://twitter.com/izu__u" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/yizhou-yu1/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-        <p>&copy; 2023 Healthspan Biotics. All rights reserved.</p>
-    </footer>
+      headerVideo.addEventListener("ended", () => {
+        headerVideo.style.display = "none";
+      });
+  </script>
+  <script>
+   const header = document.querySelector("header");
 
-    
-</body>
+      function updateHeaderOnScroll() {
+        if (window.scrollY > 100) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      }
+
+      window.addEventListener("scroll", updateHeaderOnScroll);
+      window.addEventListener("load", updateHeaderOnScroll);
+  </script>
+  <script>
+   const blackSection = document.getElementById("black-hero-section");
+      const navLinks = document.querySelectorAll("header nav ul li a");
+      const defaultLogo = document.querySelector(".default-logo");
+      const whiteLogo = document.querySelector(".white-logo");
+
+      function updateVisualsOnScroll() {
+        const sectionTop = blackSection.offsetTop + blackSection.offsetHeight * 0.36;
+        const sectionBottom = blackSection.offsetTop + blackSection.offsetHeight * 1.36;
+        const scrollY = window.scrollY + window.innerHeight / 2;
+
+        if (scrollY > sectionTop && scrollY < sectionBottom) {
+          // Inside black section
+          navLinks.forEach(link => link.classList.add("white-nav"));
+          defaultLogo.style.display = "none";
+          whiteLogo.style.display = "block";
+        } else {
+          // Outside black section
+          navLinks.forEach(link => link.classList.remove("white-nav"));
+          defaultLogo.style.display = "block";
+          whiteLogo.style.display = "none";
+        }
+      }
+
+      window.addEventListener("scroll", updateVisualsOnScroll);
+      window.addEventListener("load", updateVisualsOnScroll);
+  </script>
+ </body>
 </html>

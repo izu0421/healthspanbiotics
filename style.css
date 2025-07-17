@@ -6,36 +6,132 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    background: white;
 }
 
 /* Header */
 header {
-    color: #fff;
-    padding: 1rem 0;
-    display: flex; /* Use flexbox */
-    /* text-align: center; */
-    justify-content: space-between; /* Space between logo and nav */
-    align-items: center; /* Align items vertically */
-    /* position: relative; */
-    position: absolute;
-    top: 0;
-    width: 100%;
-    background-color: transparent;
-    z-index: 10; /* Ensures the nav is above the video */
-    padding: 1rem 0; /* Ensure there's enough padding */
-    margin-bottom: 20px; /* Adds space between sections */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+  display: flex;
+  flex-direction: column; /* stack elements vertically if needed */
+  align-items: center;
+  padding: 0 20px;
+  background-color: white;
+  height: auto;
+  min-height: 60px;
+  box-sizing: border-box;
+}
 
+.floating-logo {
+  position: fixed;
+  top: 10px;
+  left: 25px;
+  width: 150px;
+  height: 100px;
+  z-index: 1000;
+  pointer-events: none; /* allows clicking through the logo */
+}
+
+.logo-click-area {
+  position: fixed;
+  top: 20px;
+  left: 45px;
+  width: 110px;
+  height: 80px;
+  z-index: 15;
+  display: block;
+}
+
+.floating-logo video,
+.floating-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.logo-mask-blur,
+.logo-overlay {
+  position: fixed;
+  top: 16px;
+  left: 25px;
+  width: 150px;
+  height: 87px;
+  pointer-events: none;
+}
+
+.logo-mask-blur {
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  mask-image: url('media/logo_mask.png');
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+
+  -webkit-mask-image: url('media/logo_mask.png');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+}
+
+.logo-overlay {
+  z-index: 11;
+  object-fit: contain;
+  display: block;
+}
+
+
+#header-logo-final {
+  display: none;
+}
+
+
+header.scrolled {
+  background-color: rgba(255, 255, 255, 0.5); /* slightly see-through */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 3px solid rgba(255, 255, 255, 0.1); /* subtle border */
 }
 
 .header-logo {
-    position: left;
-    top: 10px; /* Adjust as needed */
-    right: 10px; /* Adjust as needed */
-    height: 120px; /* Adjust as needed */
-    width: auto; /* Maintain aspect ratio */
-    padding: 20px; /* Added padding */
+  height: 90px;               /* scaled-down logo */
+  width: auto;
+  margin: 0;
+  padding: 0;
+  display: block;
 }
 
+.header-logo-wrapper {
+  display: block;
+  width: 240px; /* adjust as needed */
+  height: 150px;
+  overflow: hidden;
+}
+
+.header-logo-wrapper video,
+.header-logo-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+#header-logo-final {
+  display: none;
+}
+
+.header-spacer {
+  height: 50px; /* adjust if your header and floating logo are taller */
+  width: 100%;
+}
 header h1 {
     margin: 10;
     padding-left: 40px; /* Reasonable left padding */
@@ -44,17 +140,54 @@ header h1 {
 
 header nav ul li a {
     text-decoration: none;
-    color: white;
+    color: #0f675b;
     font-size: 20px; /* Adjust as needed */
 }
 
 /* Navigation Menu */
-nav ul {
-    padding: 0;
-    list-style: none;
-    margin: 0;
-    text-align: center;
+nav.main-nav {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
 }
+
+nav.main-nav ul li a {
+  text-decoration: none;
+  color: #0f675b;
+  font-size: 20px;
+  font-weight: 400;
+  transition: color 0.3s ease;
+  padding-top: 16px;  /* push link text down */
+  padding-bottom: 4px;
+  display: inline-block; /* ensures padding takes effect */
+}
+
+@media (max-width: 900px) {
+  nav.main-nav ul {
+    gap: 25px;
+  }
+
+  nav.main-nav ul li a {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  nav.main-nav ul {
+    gap: 15px;
+  }
+
+body, html {
+  overflow-x: hidden;
+}
+
+  nav.main-nav ul li a {
+    font-size: 16px;
+  }
+}
+
 
 nav ul li {
     display: inline;
@@ -160,7 +293,7 @@ section {
     position: absolute;
     right: 150px; /* Adjust as needed */
     top: 300px; /* Adjust as needed */
-   
+
     max-width: calc(100% - 40px); /* Ensures the text doesn't overflow the video container */
     color: white; /* Text color */
     text-align: right; /* Align text to the right */
@@ -189,7 +322,62 @@ section {
     background-color: #077D75; /* Darker shade for hover effect */
 }
 
+.black-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  background-color: black;
+  color: white;
+  padding: 100px 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
+.black-hero-text {
+  flex: 1;
+  padding-right: 12vw;
+  max-width: 600px;
+  box-sizing: border-box;
+}
+
+.black-hero-text h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.black-hero-text p {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+.black-hero-image {
+  flex: 1;
+  box-sizing: border-box;
+  padding-left: 5vw;
+}
+
+.black-hero-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.white-nav {
+  color: white !important;
+}
+.logo-overlay.white-logo {
+  z-index: 11;
+  position: fixed;
+  top: 15px;
+  left: 25px;
+  width: 150px;
+  height: 90px;
+  object-fit: contain;
+  pointer-events: none;
+}
 /* Footer */
 footer {
     background: black;
@@ -200,7 +388,19 @@ footer {
     bottom: 0;
     width: 100%;
 }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
 
+.page-wrapper {
+  flex: 1; /* takes up remaining space */
+  display: flex;
+  flex-direction: column;
+}
 .social-links {
     margin-bottom: 10px;
 }
@@ -215,7 +415,7 @@ footer {
     color: #089A8E; /* Adjust hover color as needed */
 }
 
-/* Research page specifications 
+/* Research page specifications
 
 
 */
@@ -267,7 +467,7 @@ footer {
     position: relative;
     left: 220px; /* Adjust as needed */
     top: 280px; /* Adjust as needed */
-   
+
     max-width: calc(100% - 600px); /* Ensures the text doesn't overflow the video container */
     color: white; /* Text color */
     text-align: left; /* Align text to the right */
@@ -291,7 +491,7 @@ footer {
 }
 
 .main-content {
-    padding-top: 820px; /* Adjust as needed */
+    padding-top: 40px; /* Adjust as needed */
     display: flex;
     justify-content: space-between; /* Distributes space between items */
     align-items: flex-start; /* Aligns items to the start of the flex container */
@@ -339,7 +539,7 @@ footer {
     border: 0;
 }
 
-/* Team page 
+/* Team page
 
 
 
@@ -402,19 +602,145 @@ footer {
     font-size: 16px; /* Adjust as needed */
 }
 
-/* Contact 
-
-
-
+/* Contact
 */
+.contact-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 80px;
+  gap: 60px;
+  background-color: white;
+  flex-wrap: wrap;
+}
+
+.contact-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.contact-form-block {
+  flex: 1;
+  max-width: 600px;
+}
+
+.contact-form-block h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: #0f675b;
+}
+
+.contact-form-block p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.contact-form-block .form-control {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.contact-form-block textarea {
+  resize: vertical;
+}
+
+.contact-form-block .btn {
+  padding: 12px 30px;
+  background-color: #089A8E;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.contact-form-block .btn:hover {
+  background-color: #077D75;
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+    padding: 60px 20px;
+    gap: 40px;
+  }
+}
+
+.contact-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 60px;
+  background: white;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.contact-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.contact-form {
+  flex: 1;
+  max-width: 600px;
+}
+
+.contact-form h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #0f675b;
+}
+
+.contact-form p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.contact-form .form-control {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form .btn {
+  padding: 12px 30px;
+  background-color: #089A8E;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.contact-form .btn:hover {
+  background-color: #077D75;
+}
+
 
 .contact-container {
     padding-top: 200px;
     padding-bottom: 20px;
-    
+
     max-width: 800px; /* Adjust as needed */
     margin: 0 auto; /* Center the container */
-    
+
     background-color: #f4f4f4; /* Light background for the form */
     border-radius: 8px; /* Rounded corners */
     /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); Subtle shadow for depth */
@@ -473,4 +799,53 @@ textarea.form-control {
     border: none;
     cursor: pointer; /* Cursor changes to pointer on hover */
     transition: background-color 0.3s; /* Smooth transition for hover effect */
+
+}
+#hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  height: auto;
+  background-color: white;
+  padding: 75px 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.hero-text {
+  flex: 1;
+   /* add space above text */
+  padding-left: 12vw;
+  max-width: 600px;
+  box-sizing: border-box;
+}
+
+.hero-text h1 {
+  font-size: 5rem;
+  color: #0f675b;
+  margin-bottom: 3rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.hero-image {
+  flex: 1;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .header-spacer { height: 160px; }
 }
