@@ -13,17 +13,17 @@ body {
 /* Header */
 header {
   position: fixed;
-  top: 0;
+  top: 0]20;
   left: 0;
   width: 100%;
   z-index: 9;
   display: flex;
   flex-direction: column; /* stack elements vertically if needed */
   align-items: center;
-  padding: 0 20px;
+  padding: 0 30px;
   background-color: white;
   height: auto;
-  min-height: 60px;
+  min-height: 120px;
   box-sizing: border-box;
 }
 
@@ -159,7 +159,7 @@ nav.main-nav ul li a {
   font-size: 20px;
   font-weight: 400;
   transition: color 0.3s ease;
-  padding-top: 16px;  /* push link text down */
+  padding-top: 27px;  /* push link text down */
   padding-bottom: 4px;
   display: inline-block; /* ensures padding takes effect */
 }
@@ -735,16 +735,29 @@ html, body {
 
 
 .contact-container {
-    padding-top: 200px;
-    padding-bottom: 20px;
+  padding: 120px 20px;             /* adds horizontal padding */
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  text-align: center;
+  box-sizing: border-box;         /* ensures padding stays inside width */
+}
 
-    max-width: 800px; /* Adjust as needed */
-    margin: 0 auto; /* Center the container */
+.contact-container form {
+  width: 100%;
+  box-sizing: border-box;
+}
 
-    background-color: #f4f4f4; /* Light background for the form */
-    border-radius: 8px; /* Rounded corners */
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); Subtle shadow for depth */
-    text-align: center;
+.form-row {
+  display: flex;
+  flex-wrap: wrap;                /* allows wrapping on small screens */
+  gap: 20px;                      /* space between columns */
+}
+
+.col {
+  flex: 1;
+  min-width: 200px;               /* prevents overly narrow inputs */
 }
 
 .contact-container h1 {
@@ -777,6 +790,13 @@ html, body {
     margin-bottom: 10px; /* Space between each field */
     border: 1px solid #ddd; /* Light border for the inputs */
     border-radius: 4px; /* Slightly rounded corners for the inputs */
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
 }
 
 textarea.form-control {
